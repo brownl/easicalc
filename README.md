@@ -10,8 +10,8 @@ brew install npm
 brew install imagemagick
 
 # install cordova, cordova-splash
-npm install cordova -g
-npm install cordova-splash -g
+sudo npm install cordova -g
+sudo npm install cordova-splash -g
 
 # build for iOS simulator
 cordova platform add ios
