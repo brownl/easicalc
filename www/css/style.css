@@ -1,0 +1,72 @@
+/*
+
+    Copyright (C) 2015 Lawrence Brown
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+*/
+
+.input-row label {
+  width: 53%;
+}
+.input-row input {
+  width: 47%;
+}
+.badInput {
+  color: red;
+}
+.blueCaption, .table-view-divider {
+  color: #007aff;
+}
+#halfScoresNotice {
+  text-align: right;
+}
+#calcButton {
+  width: 95%;
+}
+#aboutCardCell {
+  padding-right: 15px;
+}
+.bar {
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.85)
+}
+.statusbar {
+  height: 15pt;
+  /* background-color: #f7f7f7; */
+  /* background-color: rgba(247, 247, 247, 0.98); */
+  border: none;
+  box-shadow: none;
+}
+.bar-nav, .app {
+  margin-top: 15pt;
+}
+#aboutCardWrapper {
+  margin-top: 25pt;
+}
+/* Modal fix */
+.modal {
+          transform: translate3d(0, 100%, 1px);
+  -webkit-transform: translate3d(0, 100%, 1px);
+}
+.modal.active {
+          transform: translate3d(0, 0, 1px);
+  -webkit-transform: translate3d(0, 0, 1px);
+}
+li {
+  font-size: 14px;
+}
+#myToggleLabel {
+  font-size: 17px;
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+    Copyright (C) 2015 Lawrence Brown
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="ratchet/css/ratchet.min.css" />
+        <link rel="stylesheet" type="text/css" href="ratchet/css/ratchet-theme-ios.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>EASI Calculator</title>
+    </head>
+    <body>
+    <div class="bar statusbar"></div>
+    <header class="bar bar-nav">
+      <h1 class="title">EASI Calculator</h1>
+      <a href="#about" class="btn pull-right">
+        About
+      </a>
+      <button onclick="clearInput()" class="btn btn-negative btn-outlined pull-left">
+        Reset
+      </button>
+    </header>
+    <div class="content">
+        <div class="app">
+<!-- main view --> <div class="overthrow">
+<div class="halfScoresNotice">
+  &nbsp;
+</div>
+<form class="input-group" name="regionOneForm">
+  <div class="table-view-divider">
+    Region 1 (head &amp; neck):
+  </div>
+  <div class="input-row">
+    <label>Area&nbsp;of&nbsp;involvement</label>
+    <input type="number" onkeypress="return isIntegerKey(event);" onkeyup="checkInput();" placeholder="Approx. %" name="area" id="oneArea">
+  </div>
+  <div class="input-row">
+    <label>Erythema</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="one" id="oneOne">
+  </div>
+  <div class="input-row">
+    <label>Oedema/papulation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="two" id="oneTwo">
+  </div>
+  <div class="input-row">
+    <label>Excoriation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="three" id="oneThree">
+  </div>
+  <div class="input-row">
+    <label>Lichenification</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="four" id="oneFour">
+    <button style="visibility: hidden;" onclick="calculate();return false;"></button>
+  </div>
+</form>
+<br />
+<form class="input-group" name="regionTwoForm">
+  <div class="table-view-divider">
+    Region 2 (upper limbs):
+  </div>
+  <div class="input-row">
+    <label>Area&nbsp;of&nbsp;involvement</label>
+    <input type="number" onkeypress="return isIntegerKey(event);" onkeyup="checkInput();" placeholder="Approx. %" name="area" id="twoArea">
+  </div>
+  <div class="input-row">
+    <label>Erythema</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="one" id="twoOne">
+  </div>
+  <div class="input-row">
+    <label>Oedema/papulation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="two" id="twoTwo">
+  </div>
+  <div class="input-row">
+    <label>Excoriation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="three" id="twoThree">
+  </div>
+  <div class="input-row">
+    <label>Lichenification</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="four" id="twoFour">
+    <button style="visibility: hidden;" onclick="calculate();return false;"></button>
+  </div>
+</form>
+<br />
+<form class="input-group" name="regionThreeForm">
+  <div class="table-view-divider">
+    Region 3 (trunk):
+  </div>
+  <div class="input-row">
+    <label>Area&nbsp;of&nbsp;involvement</label>
+    <input type="number" onkeypress="return isIntegerKey(event);" onkeyup="checkInput();" placeholder="Approx. %" name="area" id="threeArea">
+  </div>
+  <div class="input-row">
+    <label>Erythema</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="one" id="threeOne">
+  </div>
+  <div class="input-row">
+    <label>Oedema/papulation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="two" id="threeTwo">
+  </div>
+  <div class="input-row">
+    <label>Excoriation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="three" id="threeThree">
+  </div>
+  <div class="input-row">
+    <label>Lichenification</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="four" id="threeFour">
+    <button style="visibility: hidden;" onclick="calculate();return false;"></button>
+  </div>
+</form>
+<br />
+<form class="input-group" name="regionFourForm">
+  <div class="table-view-divider">
+    Region 4 (lower limbs):
+  </div>
+  <div class="input-row">
+    <label>Area&nbsp;of&nbsp;involvement</label>
+    <input type="number" onkeypress="return isIntegerKey(event);" onkeyup="checkInput();" placeholder="Approx. %" name="area" id="fourArea">
+  </div>
+  <div class="input-row">
+    <label>Erythema</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="one" id="fourOne">
+  </div>
+  <div class="input-row">
+    <label>Oedema/papulation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="two" id="fourTwo">
+  </div>
+  <div class="input-row">
+    <label>Excoriation</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="three" id="fourThree">
+  </div>
+  <div class="input-row">
+    <label>Lichenification</label>
+    <input type="number" onkeypress="return isNumberKey(event);" onkeyup="checkInput();" placeholder="Score (0-3)" name="four" id="fourFour">
+    <button style="visibility: hidden;" onclick="calculate();return false;"></button>
+  </div>
+</form>
+<div class="card">
+<ul class="table-view">
+  <li class="table-view-cell" id="myToggleLabel">Slide to green if patient is under 8&nbsp;years&nbsp;of&nbsp;age
+    <div class="toggle" id="myToggle"><div class="toggle-handle"></div></div>
+  </li>
+</ul>
+</div>
+<center>
+  <button id="calcButton" class="btn btn-primary btn-block" type="button" onclick="calculate();">
+    Calculate Score
+  </button>
+</center>
+<!-- end main view --> </div>
+            </div>
+            </div>
+        </div>
+<!-- 'about' modal -->
+<div id="about" class="modal">
+  <div class="bar statusbar"></div>
+  <div class="bar bar-nav">
+    <h1 class="title">
+      About
+    </h1>
+    <a class="icon icon-close pull-right" href="#about"></a>
+  </div><div class="content"><div id="aboutCardWrapper">
+  <div class="card" id="aboutCard">
+  <ul class="table-view">
+  <li class="table-view-cell" id="aboutCardCell">
+    <p>
+      <strong>EASI</strong> (Eczema Area and Severity Index) was developed by Prof Jon Hanifin and colleagues.
+      <br />
+      <a href="#" onclick="browser('https://www.ncbi.nlm.nih.gov/pubmed/11168575');">
+        Hanifin JM et al. Exp Dermatol. 2001 Feb;10(1):11-8.
+      </a>
+    </p>
+    <br />
+    <!--
+    <p>
+      The EASI score shows good validity, reliability and sensitivity to change and correlates with other measures of severity.
+      <br />
+      <a href="#" onclick="browser('https://www.ncbi.nlm.nih.gov/pubmed/14746622');">
+        Barbier N et al. Br J Dermatol. 2004 Jan;150(1):96-102.
+      </a>
+    </p>
+    <br />
+    -->
+    <p>
+      A user guide, providing more details on how to perform the EASI score, has been produced as a resource by HOME and is available to download 
+      <a href="#" onclick="browser('http://nottingham.ac.uk/homeforeczema/resources.aspx');">
+        here</a>.
+    </p>
+    <br />
+    <p>
+      The interpretation of EASI scores in comparison to an investigator's global assessment are reported by
+      <a href="#" onclick="browser('http://onlinelibrary.wiley.com/doi/10.1111/bjd.13662/abstract');">
+        Leshem et al. Br J Dermatol 2015</a>.
+    </p>
+    <br />
+    <!--
+    <p>
+      In an international consensus study, patients, physicians, nurses, methodologists, and pharmaceutical industry representatives agreed that EASI is the preferred core instrument to measure clinical signs in all future clinical trials for atopic eczema.
+      <br />
+      <a href="#" onclick="browser('https://www.ncbi.nlm.nih.gov/pubmed/25282560');">
+        Schmitt J et al. J Allergy Clin Immunol. 2014 Oct;134(4):800-7.
+      </a>
+    </p>
+    <br />
+    -->
+    <p>
+      The EASI calculator was developed and published by Lawrence Brown with design input from Dr Sara Brown and financial support from the Wellcome Trust (086398/Z/08/Z).
+      <br /><br />
+      This app is open source software provided free of charge; if you find it useful, please consider making a donation to the
+      <a href="#" onclick="browser('http://eff.org');">Electronic Frontier Foundation</a> or the patient support group
+      <a href="#" onclick="browser('http://eczemaoutreachscotland.org.uk/');">
+        Eczema Outreach Scotland</a>.
+    </p>
+    <br />
+      <p>
+        <a href="mailto:bugs@easicalc.uk
+                       ?subject=EASI Calculator Bug Report">
+          Report a bug in EASI Calculator</a>.
+      </p>
+      <br />
+      <p>
+        <a href="mailto:support@easicalc.uk">
+          Contact support for any other reason</a>.
+      </p>
+      <br />
+      <p>
+        Copyright (C) 2015 Lawrence Brown
+        <br />
+        This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+        <br />
+        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+        <br />
+        You should have received a copy of the GNU General Public License along with this program (tap <a href="#" onclick="window.open('LicenseView.html');">here</a> to view); if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+      </p>
+      <br />
+      <p>
+        A number of open-source frameworks and libraries have been used in this app:
+        <br />
+        <ul>
+          <li><a href="#" onclick="browser('https://cordova.apache.org');">Apache Cordova</a></li>
+          <li><a href="#" onclick="browser('https://github.com/ftlabs/fastclick');">Fastclick</a></li>
+          <li><a href="#" onclick="browser('https://filamentgroup.github.io/Overthrow/');">Overthrow</a></li>
+          <li><a href="#" onclick="browser('http://goratchet.com/');">Ratchet</a></li>
+        </ul>
+      </p>
+    </p>
+  </li>
+  </ul>
+  </div>
+  </div>
+  </div>
+</div>
+<!-- end 'about' modal -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/overthrow.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="ratchet/js/ratchet.min.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
