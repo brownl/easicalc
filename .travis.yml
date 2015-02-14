@@ -2,6 +2,7 @@ language: objective-c
 os: osx
 install:
   - brew install npm
+  - brew install imagemagick
   - sudo npm install cordova -g
   - sudo npm install cordova-splash -g
 script:
