@@ -1,8 +1,7 @@
-language: node_js
-node_js:
-  - "0.10"
+language: objective-c
 os: osx
 install:
+  - brew install npm
   - sudo npm install cordova -g
   - sudo npm install cordova-splash -g
 script:
