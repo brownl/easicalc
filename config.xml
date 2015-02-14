@@ -24,7 +24,7 @@
         Application to calculate EASI scores.
     </description>
     <author email="support@easicalc.uk" href="http://easicalc.uk">
-        PhoneGap Team
+        Lawrence Brown
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
