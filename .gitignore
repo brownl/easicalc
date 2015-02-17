@@ -1,3 +1,4 @@
 platforms/*
 *DS_Store*
 *.swp
+plugins/ios.json
