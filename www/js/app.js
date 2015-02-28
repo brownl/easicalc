@@ -109,7 +109,7 @@ function calculate() {
     // calculate 'b*'
     if (patientIsChild == true)
     {b1 = parseFloat(a1) * 0.2;}
-    else {b1 = parseFloat(a2) * 0.1;};
+    else {b1 = parseFloat(a1) * 0.1;};
     b2 = parseFloat(a2) * 0.2;
     b3 = parseFloat(a3) * 0.3;
     if (patientIsChild == true)
