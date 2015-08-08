@@ -2,3 +2,4 @@ platforms/*
 *DS_Store*
 *.swp
 plugins/ios.json
+plugins/android.json

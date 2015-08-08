@@ -65,22 +65,5 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <!-- iOS icons -->
-    <icon gap:platform="ios" height="72" src="res/icon/ios/icon-72.png" width="72" />
-    <icon gap:platform="ios" height="114" src="res/icon/ios/icon-57-2x.png" width="114" />
-    <icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
-    <icon gap:platform="ios" height="57" width="57" src="res/icon/ios/icon-57.png" />
-
-    <icon gap:platform="ios" height="40" width="40" src="res/icon/ios/icon-40.png" />
-    <icon gap:platform="ios" height="80" width="80" src="res/icon/ios/icon-40-2x.png" />
-    <icon gap:platform="ios" height="50" width="50" src="res/icon/ios/icon-50.png" />
-    <icon gap:platform="ios" height="100" width="100" src="res/icon/ios/icon-50-2x.png" />
-    <icon gap:platform="ios" height="60" width="60" src="res/icon/ios/icon-60.png" />
-    <icon gap:platform="ios" height="120" width="120" src="res/icon/ios/icon-60-2x.png" />
-    <icon gap:platform="ios" height="180" width="180" src="res/icon/ios/icon-60-3x.png" />
-    <icon gap:platform="ios" height="152" width="152" src="res/icon/ios/icon-76-2x.png" />
-    <icon gap:platform="ios" height="76" width="76" src="res/icon/ios/icon-76.png" />
-    <icon gap:platform="ios" height="29" width="29" src="res/icon/ios/icon-29.png" />
-    <icon gap:platform="ios" height="58" width="58" src="res/icon/ios/icon-29-2x.png" />
     <access origin="*" />
 </widget>
