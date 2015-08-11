@@ -31,7 +31,6 @@
     <preference name="phonegap-version" value="3.5.0" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
@@ -66,4 +65,10 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <access origin="*" />
+    <platform name="ios">
+      <preference name="fullscreen" value="true" />
+    </platform>
+    <platform name="android">
+      <preference name="fullscreen" value="false" />
+    </platform>
 </widget>

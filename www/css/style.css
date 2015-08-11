@@ -70,3 +70,9 @@ li {
 #myToggleLabel {
   font-size: 17px;
 }
+.android-status-bar {
+  margin-top: 3pt;
+}
+.android-card-wrapper {
+  margin-top: 13pt !important;
+}

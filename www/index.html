@@ -32,7 +32,7 @@
     </head>
     <body>
     <div class="bar statusbar"></div>
-    <header class="bar bar-nav">
+    <header class="bar bar-nav" id="headerBar">
       <h1 class="title">EASI Calculator</h1>
       <a href="#about" class="btn pull-right">
         About
@@ -42,7 +42,7 @@
       </button>
     </header>
     <div class="content">
-        <div class="app">
+        <div class="app" id="app">
 <!-- main view --> <div class="overthrow">
 <div class="halfScoresNotice">
   &nbsp;
@@ -173,7 +173,7 @@
 <!-- 'about' modal -->
 <div id="about" class="modal">
   <div class="bar statusbar"></div>
-  <div class="bar bar-nav">
+  <div class="bar bar-nav" id="modalHeaderBar">
     <h1 class="title">
       About
     </h1>
@@ -237,11 +237,11 @@
     <br />
       <p>
         <a href="mailto:bugs@easicalc.uk
-                       ?subject=EASI Calculator Bug Report">
+                       ?subject=EASI Calculator Bug Report" id="bugReport">
           Report a bug in EASI Calculator</a>.
       </p>
       <p>
-        <a href="mailto:support@easicalc.uk">
+        <a href="mailto:support@easicalc.uk" id="support">
           Contact support for any other reason</a>.
       </p>
       <br />

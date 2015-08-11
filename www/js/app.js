@@ -36,6 +36,19 @@ document.addEventListener('deviceready', function () {
   }
   FastClick.attach(document.body);
   console.log("initalized app");
+  // hack for android support
+  if (/Android/.test(navigator.userAgent)) {
+    var header = document.getElementById("headerBar");
+    header.className = header.className + " android-status-bar";
+    var modalHeader = document.getElementById("modalHeaderBar");
+    modalHeader.className = modalHeader.className + " android-status-bar";
+    var dApp = document.getElementById("app");
+    dApp.className = dApp.className + " android-status-bar";
+    var cardWrapper = document.getElementById("aboutCardWrapper");
+    cardWrapper.className = cardWrapper.className + " android-card-wrapper";
+    document.getElementById("bugReport").href="javascript:titleAlert('Info', 'Please send an email to bugs@easicalc.uk. Thanks!');";
+    document.getElementById("support").href="javascript:titleAlert('Info', 'Please send an email to support@easicalc.uk. Thanks!');";
+  }
 }, false);
 
 // variables
@@ -337,4 +350,12 @@ document
 });
 function browser(url) {
   window.open(url, '_system');
+};
+function titleAlert(t, m) {
+  navigator.notification.alert(
+    m,
+    null,
+    t,
+    'OK'
+  );
 };
