@@ -5,6 +5,7 @@ install:
   - brew install imagemagick
   - sudo npm install cordova -g
   - sudo npm install cordova-splash -g
+  - sudo npm install cordova-icon -g
 script:
   - cordova platform add ios
   - cordova build
