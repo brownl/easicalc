@@ -362,3 +362,10 @@ function titleAlert(t, m) {
     'OK'
   );
 };
+
+function modalUp() {
+  document.getElementById("about").className = "modal active";
+}
+function modalDown() {
+  document.getElementById("about").className = "modal";
+}
