@@ -48,6 +48,9 @@ document.addEventListener('deviceready', function () {
     cardWrapper.className = cardWrapper.className + " android-card-wrapper";
     document.getElementById("bugReport").href="javascript:titleAlert('Info', 'Please send an email to bugs@easicalc.uk. Thanks!');";
     document.getElementById("support").href="javascript:titleAlert('Info', 'Please send an email to support@easicalc.uk. Thanks!');";
+    document.addEventListener("backbutton", function () {
+      document.getElementById("about").className = "modal";
+    }, false);
   }
 }, false);
 
